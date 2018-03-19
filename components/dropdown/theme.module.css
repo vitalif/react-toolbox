@@ -115,6 +115,10 @@
     cursor: normal;
     pointer-events: none;
   }
+
+  &.withclear input {
+    text-indent: 28px !important;
+  }
 }
 
 .templateValue {
@@ -163,4 +167,14 @@
   font-size: var(--input-label-font-size);
   line-height: var(--input-underline-height);
   margin-bottom: calc(-1 * var(--input-underline-height));
+}
+
+.clear {
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  top: 12px;
+  left: -4px;
+  padding: 4px;
 }

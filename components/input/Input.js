@@ -189,7 +189,7 @@ const factory = (FontIcon) => {
         disabled,
         required,
         type,
-        value,
+        value: value == null ? '' : value,
       };
       if (!multiline) {
         inputElementProps.maxLength = maxLength;
