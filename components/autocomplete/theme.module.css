@@ -14,21 +14,15 @@
   transition-duration: var(--animation-duration);
   transition-property: max-height, box-shadow;
   transition-timing-function: var(--animation-curve-default);
-  visibility: hidden;
   width: 100%;
-  z-index: var(--z-index-high);
+  z-index: var(--z-index-highest);
+  box-shadow: var(--zdepth-shadow-1);
+  max-height: var(--autocomplete-overflow-max-height);
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     height: 0;
     width: 0;
-  }
-
-  &:not(.up) {
-    margin-top: calc(-1 * var(--input-padding));
-  }
-
-  &.up {
-    bottom: 0;
   }
 }
 
@@ -37,15 +31,6 @@
   position: relative;
 
   @apply --reset;
-
-  &.focus {
-    & .suggestions {
-      box-shadow: var(--zdepth-shadow-1);
-      max-height: var(--autocomplete-overflow-max-height);
-      -ms-overflow-style: none;
-      visibility: visible;
-    }
-  }
 }
 
 .clear {
