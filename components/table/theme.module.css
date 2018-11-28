@@ -28,12 +28,12 @@
   @apply --reset;
 }
 
-.head {
+.table > head, .head {
   padding-bottom: calc(0.3 * var(--unit));
   white-space: nowrap;
 }
 
-.row {
+.table > tbody > tr, .row {
   color: var(--table-row-color);
   height: var(--table-row-height);
   transition-duration: 0.28s;
@@ -46,6 +46,8 @@
   &.selected:hover { background-color: var(--table-hover-color); }
 }
 
+.table > thead > tr > td,
+.table > tbody > tr > td,
 .rowCell {
   border-bottom: var(--table-dividers);
   border-top: var(--table-dividers);
@@ -63,18 +65,8 @@
   }
 }
 
-.sortIcon {
-  display: inline-block;
-  font-size: calc(1.6 * var(--unit));
-  margin-right: 3px;
-  transition: 0.28s transform var(--animation-curve-default);
-  vertical-align: sub;
-
-  &.asc {
-    transform: rotate(180deg);
-  }
-}
-
+.table > thead > tr > th,
+.table > tbody > tr > th,
 .headCell {
   color: var(--table-header-color);
   font-size: var(--table-header-font-size);
@@ -104,6 +96,10 @@
   }
 }
 
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
 .rowCell,
 .headCell {
   padding: 12px var(--table-column-padding);
